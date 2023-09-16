@@ -6,7 +6,7 @@ import Menu from "./Menu/Menu";
 const Navbar = () => {
   return (
     <div className="flex w-full h-20 justify-between items-center px-5">
-      <Logo />
+      <Logo color={"white"} />
       <Search />
       <Menu />
     </div>

@@ -1,13 +1,31 @@
+"use client";
+
 import Description from "@/components/Description Box/Description";
-import Rating from "@/components/Description Box/Rating";
-import Footer from "@/components/Footer/Footer";
-import MovieCard from "@/components/Footer/MovieCard/MovieCard";
-import Navbar from "@/components/Navbar/Navbar";
+
 import Title from "@/components/Title/Title";
 import Pagination from "@/components/pagination/Pagination";
-import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import MovieCard from "../components/MovieCard/MovieCard";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
+  const [movieList, setMovieList] = useState([]);
+
+  const getMovie = () => {
+    fetch(
+      "https://api.themoviedb.org/3/discover/movie?api_key=cb5b2df2e013fd040a05e5dce84b89e1"
+    )
+      .then((res) => res.json())
+      .then((json) => setMovieList(json.results))
+      .catch((err) => console.error("error:" + err));
+  };
+  useEffect(() => {
+    getMovie();
+  }, []);
+
+  console.log(movieList);
   return (
     <main className="">
       {/* HEWADER */}
@@ -29,10 +47,14 @@ export default function Home() {
       <Title />
       <div className="grid text-black mx-14 my-3">
         <div className="grid grid-cols-4 justify-center">
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
+          {/* {console.log(typeof movieList)} */}
+          {movieList?.map((movie) => (
+            <ul key={movie.id}>
+              <Link href={`/${movie.id}`}>
+                <MovieCard key={movie.id} movie={movie} />
+              </Link>
+            </ul>
+          ))}
         </div>
       </div>
       {/* FOOTER */}

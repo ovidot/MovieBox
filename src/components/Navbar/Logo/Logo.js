@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Logo = () => {
+const Logo = ({ color }) => {
   return (
     <div className="inline-flex items-center gap-6">
       <Image
@@ -11,7 +11,7 @@ const Logo = () => {
         height={50}
       />
 
-      <div className="text-white not-italic font-bold leading-6 text-2xl">
+      <div className={`text-${color} not-italic font-bold leading-6 text-2xl`}>
         MovieBox
       </div>
     </div>
