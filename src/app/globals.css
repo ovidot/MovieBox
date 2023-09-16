@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
+  --background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 100%),
     url("/Poster.png"), lightgray 50% / cover no-repeat;
 }
 

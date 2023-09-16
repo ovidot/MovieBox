@@ -4,11 +4,11 @@ import Image from "next/image";
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col items-center h-[982px] w-[226px] Justify-center border rounded-tr-[45px] rounded-br-[45px]  ">
-      <div className="item-center 7 p-5">
+    <div className="flex flex-col items-center h-full  Justify-center border rounded-tr-[45px] rounded-br-[45px] flex-grow flex-shrink  ">
+      <div className="item-center p-5 max-w-full">
         <Logo color={"black"} />
       </div>
-      <div className="flex flex-col justify-between  my-12">
+      <div className="flex flex-col justify-between  my-6">
         <div className="h-[86px] w-[226px] items-center justify-center flex">
           <div className="flex ms-9 justify-start gap-6 mx-auto ">
             <Image
