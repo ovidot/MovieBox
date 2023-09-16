@@ -1,6 +1,6 @@
 "use client";
 
-import Description from "../components/Description Box/Description";
+import Description from "../components/DescriptionBox/Description";
 
 import Title from "../components/Title/Title";
 import Pagination from "../components/pagination/Pagination";
