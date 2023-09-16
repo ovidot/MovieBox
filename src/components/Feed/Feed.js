@@ -97,13 +97,34 @@ const Feed = ({ movie }) => {
         <div className="col-span-9">
           <div className="p-5">
             <div className="flex flex-col max-w-[774px]  ">
-              <div className="flex">
-                <span className="">{movie.original_title}</span>
-                <span className="">{movie.release_date}</span>
-                <span className="">PG-13 . 2h 10m</span>
-                <span className="">Genre Genre</span>
+              <div className="flex gap-5">
+                <span
+                  className="text-lg font-sans font-medium "
+                  data-testid={"movie-title"}
+                >
+                  {movie.original_title}
+                </span>
+                <span
+                  className="text-lg font-sans font-medium "
+                  data-testid={"movie-release-date"}
+                >
+                  {movie.release_date}
+                </span>
+                <span
+                  className="text-lg font-sans font-medium "
+                  data-testid={"movie-runtime"}
+                >
+                  PG-13 . {movie.runtime}
+                </span>
+                {console.log(movie.genres)}
+                {movie.genres?.map(() => {
+                  <span className="">a</span>;
+                })}
+                <span className=""></span>
               </div>
-              <div className="mt-5">{movie.overview}</div>
+              <div className="mt-5" data-testid={"movie-overview"}>
+                {movie.overview}
+              </div>
             </div>
             <div className="flex flex-col justify-between gap-7">
               <div className="">

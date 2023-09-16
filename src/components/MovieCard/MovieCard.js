@@ -16,7 +16,6 @@ const MovieCard = ({ movie }) => {
   useEffect(() => {
     getGenre();
   }, []);
-  console.log();
   return (
     <div
       className="flex flex-col items-center gap-3 mb-14"
@@ -30,7 +29,10 @@ const MovieCard = ({ movie }) => {
         data-testid={"movie-poster"}
       />
       <div className="flex flex-col gap-3">
-        <span className="text-gray-400 text-[12px] font-bold font-sans not-italic">
+        <span
+          className="text-gray-400 text-[12px] font-bold font-sans not-italic"
+          data-testid={"movie-release-date"}
+        >
           {movie.release_date}
         </span>
         <span
