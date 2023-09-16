@@ -1,4 +1,4 @@
-import Rating from "@/components/Description Box/Rating";
+import Rating from "../components/Description Box/Rating";
 import Image from "next/image";
 import MovieCardRating from "./MovieCardRating";
 import { useEffect, useState } from "react";

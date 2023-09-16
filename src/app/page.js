@@ -1,9 +1,9 @@
 "use client";
 
-import Description from "@/components/Description Box/Description";
+import Description from "../components/Description Box/Description";
 
-import Title from "@/components/Title/Title";
-import Pagination from "@/components/pagination/Pagination";
+import Title from "../components/Title/Title";
+import Pagination from "../components/pagination/Pagination";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard/MovieCard";
