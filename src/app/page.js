@@ -48,7 +48,7 @@ export default function Home() {
       <div className="grid text-black mx-14 my-3">
         <div className="grid grid-cols-4 justify-center">
           {/* {console.log(typeof movieList)} */}
-          {movieList?.map((movie) => (
+          {movieList?.slice(0, 10).map((movie) => (
             <ul key={movie.id}>
               <Link href={`/${movie.id}`}>
                 <MovieCard key={movie.id} movie={movie} />

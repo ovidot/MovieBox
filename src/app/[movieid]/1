@@ -1,38 +1,38 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Feed from "../../components/Feed/Feed";
 
 const Movie = ({ params }) => {
-  const movid = params.movieid;
-  const [movieObj, setMovieObj] = useState([]);
-  const [movieVid, setMovieVid] = useState([]);
+  const [videoList, setVideo] = useState([]);
+  const [movieList, setMovie] = useState([]);
+  const movieId = params.movieid;
 
-  const getdMovie = () => {
+  const getMovie = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${movid}?api_key=cb5b2df2e013fd040a05e5dce84b89e1`
+      `https://api.themoviedb.org/3/movie/385687?api_key=cb5b2df2e013fd040a05e5dce84b89e1`
     )
       .then((res) => res.json())
-      .then((json) => setMovieObj(json))
+      .then((json) => setMovie(json.results))
       .catch((err) => console.error("error:" + err));
   };
   useEffect(() => {
-    getdMovie();
+    getMovie();
   }, []);
 
-  // const getMovieVid = () => {
-  //   fetch(
-  //     `https://api.themoviedb.org/3/movie/${movid}/videos?api_key=cb5b2df2e013fd040a05e5dce84b89e1`
-  //   )
-  //     .then((res) => res.json)
-  //     .then((json) => setMovieVid(json.results))
-  //     .catch((err) => console.err("error" + err));
-  // };
-  // useEffect(() => {
-  //   getMovieVid();
-  // });
-  console.log(movieObj);
+  const getMovieVideo = () => {
+    fetch(
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=cb5b2df2e013fd040a05e5dce84b89e1`
+    )
+      .then((res) => res.json)
+      .then((json) => setVideo(json.results))
+      .catch((err) => console.err("error" + err));
+  };
+  useEffect(() => {
+    getMovieVideo();
+  });
+  console.log(videoList);
+  console.log(movieList);
 
   return (
     <div className="grid grid-cols-12   w-full ">
@@ -43,7 +43,7 @@ const Movie = ({ params }) => {
       </div>
       {/* Middle Component */}
       <div className="col-span-12 md:col-span-10">
-        <Feed movie={movieObj} />
+        <Feed />
       </div>
       {/* Trailer */}
       {/* title and info */}
