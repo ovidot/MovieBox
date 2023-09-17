@@ -1,4 +1,3 @@
-import Rating from "../DescriptionBox/Rating";
 import Image from "next/image";
 import MovieCardRating from "./MovieCardRating";
 import { useEffect, useState } from "react";
@@ -19,7 +18,7 @@ const MovieCard = ({ movie }) => {
   return (
     <div
       className="flex flex-col items-center gap-3 mb-14"
-      data-testid={"movie - card"}
+      data-testid={"movie-card"}
     >
       <Image
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

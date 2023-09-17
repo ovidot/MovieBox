@@ -115,11 +115,6 @@ const Feed = ({ movie }) => {
                 >
                   PG-13 . {movie.runtime}
                 </span>
-                {console.log(movie.genres)}
-                {movie.genres.slice(0, 2).map(() => {
-                  <span className="">a</span>;
-                })}
-                <span className=""></span>
               </div>
               <div className="mt-5" data-testid={"movie-overview"}>
                 {movie.overview}

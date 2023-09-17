@@ -6,7 +6,7 @@ const Rating = () => {
     <div className="flex w-[184px] h-[17px] justify-between ">
       <div className="inline-flex items-center gap-[10px]">
         <Image
-          src="/4519120_imdb_icon.png"
+          src={"/4519120_imdb_icon.png"}
           width={35}
           height={17}
           alt="imdb"
