@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const Feed = ({ movie }) => {
-  console.log(movie.poster_path);
   return (
     <div className=" text-black w-full  flex-grow p-6">
       <div
@@ -117,7 +116,7 @@ const Feed = ({ movie }) => {
                   PG-13 . {movie.runtime}
                 </span>
                 {console.log(movie.genres)}
-                {movie.genres?.map(() => {
+                {movie.genres.slice(0, 2).map(() => {
                   <span className="">a</span>;
                 })}
                 <span className=""></span>
